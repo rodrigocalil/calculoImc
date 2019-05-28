@@ -136,7 +136,7 @@ class principal
 
 		desenvolvedor.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				JOptionPane.showMessageDialog(null, "Calculo de IMC. Por <<Coloque seu nome>> .");
+				JOptionPane.showMessageDialog(null, "Calculo de IMC. Por Rodrigo Simao .");
 
 			}
 		});
