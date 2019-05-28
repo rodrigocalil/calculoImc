@@ -31,7 +31,7 @@ class principal
 		altura = new JLabel("Digite sua altura");
 		inputPeso = new JTextField(4);
 		inputAltura = new JTextField(4);
-		inputImc = new JTextField(4);
+		inputImc = new JTextField(15);
 		inputImc.setEnabled(false);
 		//inputAltura.setSize(100, 150);
 		JPanel labelPanel = new JPanel();
@@ -99,7 +99,15 @@ class principal
 					String imc = calcularImc(Integer.parseInt(inputPeso.getText()),Integer.parseInt(inputAltura.getText()));
 					System.out.println(imc);
 					inputImc.setText(imc);
-					
+					if (Integer.parseInt(imc) < 25 && Integer.parseInt(imc) > 18) {
+						inputImc.setText(imc +" - Peso Normal");
+					}else if (Integer.parseInt(imc) > 25 && Integer.parseInt(imc) < 30) {
+						inputImc.setText(imc +" - Acima do peso");
+					}else if (Integer.parseInt(imc) > 29 && Integer.parseInt(imc) < 35) {
+						inputImc.setText(imc +" - Obesidade I");
+					}else if (Integer.parseInt(imc) > 34 && Integer.parseInt(imc) < 40) {
+						inputImc.setText(imc +" - Obesidade II (severa)");
+					}
 					
 				}
 				catch (Exception e1){//Catch exception if any
@@ -136,7 +144,7 @@ class principal
 
 		desenvolvedor.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				JOptionPane.showMessageDialog(null, "Calculo de IMC. Por Rodrigo Simao .");
+				JOptionPane.showMessageDialog(null, "Calculo de IMC. Por Rodrigo Simao.");
 
 			}
 		});
